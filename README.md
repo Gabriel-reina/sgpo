@@ -6,7 +6,6 @@
 SGPO/
 ├── README.md                         # shared navigation and checkpoint locations
 ├── LICENSE
-├── MANIFEST.json                     # SHA256 for release files
 ├── sgpo_core/                        # policy-optimization core for SID models
 │   ├── README.md
 │   └── sgpo/rl.py                    # reward, GRPO, GSPO and SGPO objectives

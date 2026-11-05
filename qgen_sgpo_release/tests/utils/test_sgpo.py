@@ -439,14 +439,6 @@ class TestReleaseContract(unittest.TestCase):
             module.export(source, target, 'industrial and scientific')
             self.assertEqual(json.loads(target.read_text()), shipped)
 
-    def test_data_manifest_order_is_irrelevant(self):
-        import verify_release
-        counts = {'data/rl_test.jsonl': 4533, 'data/rl_val.jsonl': 4532,
-                  'data/rl_train.jsonl': 36259, 'data/corpus.jsonl': 3686}
-        verify_release.verify_data(counts)
-        with self.assertRaises(RuntimeError):
-            verify_release.verify_data({'data/corpus.jsonl': 3686})
-
     def test_framework_rejects_wrong_commit_partial_patch_and_injection(self):
         import json
         import prepare_roll

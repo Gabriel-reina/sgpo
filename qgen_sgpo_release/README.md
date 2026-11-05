@@ -95,6 +95,28 @@ All three metrics were recomputed from the saved checkpoint-599 rank records, wi
 | s12345 | GSPO | 0.04259 | 0.07723 | 0.09753 | 0.11628 | 0.14629 | 0.17630 | 0.19219 | 0.21756 | 0.25485 |
 | s12345 | SGPO | **0.05406** | **0.08429** | **0.10106** | 0.11695 | 0.14784 | 0.17343 | 0.19131 | 0.21072 | 0.24691 |
 
+### Generation statistics
+
+| seed | arm | fmt | gen_len (tokens) | words |
+|---|---|--:|--:|--:|
+| s42 | GRPO | 0.9998 | 102.9 | 15.72 |
+| s42 | GSPO | 0.9991 | 90.0 | 17.78 |
+| s42 | SGPO | 1.0000 | 40.2 | 12.28 |
+| s43 | GRPO | 1.0000 | 107.4 | 8.82 |
+| s43 | GSPO | 0.9971 | 118.7 | 16.49 |
+| s43 | SGPO | 1.0000 | 38.0 | 10.78 |
+| s1234 | GRPO | 0.9985 | 159.8 | 15.86 |
+| s1234 | GSPO | 0.9993 | 118.2 | 19.51 |
+| s1234 | SGPO | 1.0000 | 35.3 | 8.14 |
+| s12345 | GRPO | 0.9969 | 74.7 | 17.62 |
+| s12345 | GSPO | 0.9998 | 135.2 | 14.94 |
+| s12345 | SGPO | 1.0000 | 50.4 | 12.06 |
+| mean ± sd | GRPO | 0.9988 ± 0.0014 | 111.2 ± 35.5 | 14.50 ± 3.89 |
+| mean ± sd | GSPO | 0.9988 ± 0.0012 | 115.5 ± 18.8 | 17.18 ± 1.94 |
+| mean ± sd | SGPO | 1.0000 ± 0.0000 | 41.0 ± 6.6 | 10.81 ± 1.90 |
+
+`fmt` is the fraction of validation queries whose generated output parses into a well-formed query. `gen_len` is the mean number of generated response tokens. `words` is the mean number of whitespace-separated tokens in the emitted query. All three columns are read from the same checkpoint-599 records as the retrieval metrics above. SGPO emits about one third as many response tokens as the two baselines and keeps format correctness at 1.000 on all four seeds.
+
 ### Mean delta over four seeds (%, SGPO vs GRPO)
 
 | metric | @1 | @2 | @3 | @5 | @10 | @20 | @30 | @50 | @100 |
@@ -188,7 +210,6 @@ Evaluation uses vLLM greedy decoding (temperature=0, n=1, max_new_tokens=256) on
 
 ```bash
 python -m pip install -r requirements-cpu.txt
-python tools/verify_release.py
 ROLL_ROOT="$ROLL_ROOT" python tests/utils/test_sgpo.py
 python examples/recr1-qgen-amazon/tools/selfcheck_qgen.py --tokenizer "$QGEN_PRETRAIN"
 ```
