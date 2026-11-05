@@ -1,0 +1,53 @@
+{
+  "rl_checkpoints": 15,
+  "base_checkpoints": 1,
+  "data_rows": {
+    "train": 36259,
+    "valid": 4532,
+    "test": 4533
+  },
+  "catalog_items": 3686,
+  "sid_levels": 6,
+  "codebook_size": 16,
+  "checkpoint_byte_identity": true,
+  "objective_gradient_regression": true,
+  "full_checkpoint_evaluation": {
+    "models": [
+      "42-grpo",
+      "42-gspo",
+      "42-sgpo",
+      "43-grpo",
+      "43-gspo",
+      "43-sgpo",
+      "44-grpo",
+      "44-gspo",
+      "44-sgpo",
+      "45-grpo",
+      "45-gspo",
+      "45-sgpo",
+      "46-grpo",
+      "46-gspo",
+      "46-sgpo"
+    ],
+    "split": "valid",
+    "requests": 4532,
+    "beam": 20,
+    "matching": [
+      "exact",
+      "mask0-3"
+    ],
+    "metrics": [
+      "HitRate",
+      "NDCG",
+      "MRR"
+    ],
+    "cutoffs": [
+      5,
+      10,
+      20
+    ],
+    "max_allowed_difference": 1e-12,
+    "all_passed": true
+  },
+  "reference_rank_metrics_exact": true
+}

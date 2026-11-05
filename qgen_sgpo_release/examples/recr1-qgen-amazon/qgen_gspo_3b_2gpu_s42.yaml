@@ -1,0 +1,12 @@
+
+defaults:
+  - qgen_grpo_3b_2gpu
+  - _self_
+
+seed: 42
+importance_sampling: seq
+
+exp_name: "qgen-2gpu-gspo-s42"
+
+tracker_kwargs:
+  log_dir: ./tensorboard/2gpu_gspo_s42

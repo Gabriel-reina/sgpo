@@ -1,0 +1,12 @@
+include LICENSE
+include README.md
+include requirements*.txt
+recursive-include patches *.patch *.json
+recursive-include tools *.py *.json
+recursive-include examples *.py *.yaml
+recursive-include tests *.py
+recursive-include data *.jsonl
+prune roll
+prune .work
+prune .venv
+global-exclude *.py[cod] .DS_Store

@@ -1,0 +1,8 @@
+defaults:
+  - qgen_grpo_3b_2gpu
+  - _self_
+
+exp_name: "qgen-2gpu-sgpo-tg-c4-a200"
+
+tracker_kwargs:
+  log_dir: ./tensorboard/2gpu_sgpo_tg_c4_a200

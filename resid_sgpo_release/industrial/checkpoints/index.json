@@ -1,0 +1,125 @@
+{
+  "base": "base/gr.pt",
+  "rl": [
+    {
+      "seed": 42,
+      "method": "grpo",
+      "step": 600,
+      "path": "checkpoints/seed42/grpo.pt",
+      "bytes": 3714417,
+      "sha256": "436aee9bad207a10623ee8bfd83c82464eb65e2a72eefbbdae7fa6a9fc4c819d"
+    },
+    {
+      "seed": 42,
+      "method": "gspo",
+      "step": 600,
+      "path": "checkpoints/seed42/gspo.pt",
+      "bytes": 3714417,
+      "sha256": "5c1c6cfa33edb64a898ffc85c16b469f09fac87ba2b3d578f141236a11983155"
+    },
+    {
+      "seed": 42,
+      "method": "sgpo",
+      "step": 600,
+      "path": "checkpoints/seed42/sgpo.pt",
+      "bytes": 3714417,
+      "sha256": "d623e498fbac531f53812df08088bdcf1e80cf37db75c20bb3f9d05026ec5025"
+    },
+    {
+      "seed": 43,
+      "method": "grpo",
+      "step": 600,
+      "path": "checkpoints/seed43/grpo.pt",
+      "bytes": 3714417,
+      "sha256": "c5ee37cba24759c5f948a6672a51f3bd4be3d1447b730d3f533072ba7c560f80"
+    },
+    {
+      "seed": 43,
+      "method": "gspo",
+      "step": 600,
+      "path": "checkpoints/seed43/gspo.pt",
+      "bytes": 3714417,
+      "sha256": "4aa8577ec39d29452baa57e8e300f539437c0d92c07003bd2058094c9e3c98b5"
+    },
+    {
+      "seed": 43,
+      "method": "sgpo",
+      "step": 600,
+      "path": "checkpoints/seed43/sgpo.pt",
+      "bytes": 3714417,
+      "sha256": "dfd590a13b664f1b47897311c23176603b1e6c824c61dcd723df6e2d195d2f17"
+    },
+    {
+      "seed": 44,
+      "method": "grpo",
+      "step": 600,
+      "path": "checkpoints/seed44/grpo.pt",
+      "bytes": 3714417,
+      "sha256": "80f38ca7121815d08d8dc5756cabbaa51c69a13d2cbd5d586d95837bb61c438c"
+    },
+    {
+      "seed": 44,
+      "method": "gspo",
+      "step": 600,
+      "path": "checkpoints/seed44/gspo.pt",
+      "bytes": 3714417,
+      "sha256": "18597e7fd007a1479b5d331deb130f01a716481bf79720776758b8a21cde9159"
+    },
+    {
+      "seed": 44,
+      "method": "sgpo",
+      "step": 600,
+      "path": "checkpoints/seed44/sgpo.pt",
+      "bytes": 3714417,
+      "sha256": "c467d67ae0394122a34a937e6bea02fa2cf764380f89441ddce87c0d4ca331f9"
+    },
+    {
+      "seed": 45,
+      "method": "grpo",
+      "step": 600,
+      "path": "checkpoints/seed45/grpo.pt",
+      "bytes": 3714417,
+      "sha256": "f51115c2b3d26c5ed99d8462b3671732d32bde6814a81cdfec99933761c4fd8b"
+    },
+    {
+      "seed": 45,
+      "method": "gspo",
+      "step": 600,
+      "path": "checkpoints/seed45/gspo.pt",
+      "bytes": 3714417,
+      "sha256": "1d7f11c03bc533d0496a7d3c4666ac2a2664ea70506adc62a7a5c4d718c096da"
+    },
+    {
+      "seed": 45,
+      "method": "sgpo",
+      "step": 600,
+      "path": "checkpoints/seed45/sgpo.pt",
+      "bytes": 3714417,
+      "sha256": "a7ee84c13b6fada76335e015e678c74b273e2b225ae832919a99fbe6ba5f662c"
+    },
+    {
+      "seed": 46,
+      "method": "grpo",
+      "step": 600,
+      "path": "checkpoints/seed46/grpo.pt",
+      "bytes": 3714417,
+      "sha256": "4e9e1b8e47c5a9941b3fd5463af09d42f0709e772e2a77e30d3c490fdd7021d1"
+    },
+    {
+      "seed": 46,
+      "method": "gspo",
+      "step": 600,
+      "path": "checkpoints/seed46/gspo.pt",
+      "bytes": 3714417,
+      "sha256": "93253638d1c0dc0eb8553082bd996b82e66f4cc1bcaed661daa3c707cc76a3ef"
+    },
+    {
+      "seed": 46,
+      "method": "sgpo",
+      "step": 600,
+      "path": "checkpoints/seed46/sgpo.pt",
+      "bytes": 3714417,
+      "sha256": "2fec21df73b126da50c375b24352e7680d79ae9c1e7220c68b06a5d5455191fc"
+    }
+  ]
+}

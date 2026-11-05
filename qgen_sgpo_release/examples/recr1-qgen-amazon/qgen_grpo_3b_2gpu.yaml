@@ -1,0 +1,9 @@
+
+defaults:
+  - qgen_grpo_3b
+  - _self_
+
+exp_name: "qgen-2gpu-grpo"
+
+tracker_kwargs:
+  log_dir: ./tensorboard/2gpu_grpo

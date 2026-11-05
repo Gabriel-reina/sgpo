@@ -1,0 +1,45 @@
+diff --git a/roll/pipeline/rlvr/actor_worker.py b/roll/pipeline/rlvr/actor_worker.py
+--- a/roll/pipeline/rlvr/actor_worker.py
++++ b/roll/pipeline/rlvr/actor_worker.py
+@@ -77,6 +77,17 @@
+ 
+         pg_clip_low = self.pipeline_config.pg_clip_low if self.pipeline_config.use_pg_clip_range else self.pipeline_config.pg_clip
+         pg_clip_high = self.pipeline_config.pg_clip_high if self.pipeline_config.use_pg_clip_range else self.pipeline_config.pg_clip
++        sgpo_metrics = {}
++        from qgen_sgpo.sgpo import sgpo_enabled, compute_sgpo
++        if sgpo_enabled():
++            advantages, ratio, sgpo_metrics = compute_sgpo(
++                log_probs=log_probs,
++                old_log_probs=old_log_probs,
++                advantages=advantages,
++                response_mask=response_mask,
++                global_step=data.meta_info["global_step"],
++            )
++
+         surr1 = ratio * advantages
+         surr2 = ratio.clamp(1 - pg_clip_low, 1 + pg_clip_high) * advantages
+ 
+@@ -162,6 +173,7 @@
+             "actor/sample_weights_max@max": sample_weights.max().detach().item(),
+             **loss_metric,
+             **train_infer_metric,
++            **sgpo_metrics,
+         }
+ 
+         return total_loss, pg_metrics
+diff --git a/roll/utils/functionals.py b/roll/utils/functionals.py
+--- a/roll/utils/functionals.py
++++ b/roll/utils/functionals.py
+@@ -196,10 +196,8 @@
+     elif kl_penalty == "mse":
+         log_ratio = 0.5 * (log_probs - log_probs_base).square()
+     elif kl_penalty == "k3":
+-        kl = log_probs_base - log_probs
+-        ratio = torch.exp(kl)
+-        kld = (ratio - kl - 1).contiguous()
+-        log_ratio = torch.clamp(kld, min=-10, max=10)
++        kl = torch.clamp(log_probs_base - log_probs, max=20)
++        log_ratio = (torch.exp(kl) - kl - 1).contiguous()
+     elif kl_penalty == "full":
+         log_ratio = F.kl_div(log_probs_base, log_probs, log_target=True, reduction="none").sum(-1)
+     else:

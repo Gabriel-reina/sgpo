@@ -1,0 +1,36 @@
+{
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "methods": [
+    "grpo",
+    "gspo",
+    "sgpo"
+  ],
+  "steps": 600,
+  "batch": 32,
+  "rollout_beam": 8,
+  "evaluation_beam": 20,
+  "learning_rate": 1e-05,
+  "warmup_steps": 20,
+  "scheduler": "cosine600",
+  "clip": 0.1,
+  "kl_coefficient": 0.001,
+  "rl_weight": 1,
+  "weight_decay": 0,
+  "gradient_clip": 0.5,
+  "sgpo_c_start": 4,
+  "sgpo_c_end": 1,
+  "sgpo_anneal_steps": 200,
+  "token_grad": true,
+  "reward": "fraction of 6 matching SID positions",
+  "validation_requests": 4866,
+  "dataset": "Office_Products",
+  "train_requests": 38924,
+  "test_requests": 4866,
+  "catalog_items": 3459
+}

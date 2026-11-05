@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/alibaba/ROLL.git",
+  "commit": "7f9d4d3873a87679c8d070085a4bd3bdeea7e589",
+  "tag": "v0.3.0",
+  "files": {
+    "roll/pipeline/rlvr/actor_worker.py": {
+      "before": "24ebc7737d76ba4e583204c5cd0125c3b8a9b871ba4ec2a0e3b60af6c11e850b",
+      "after": "3b48c1149b0c1eb8204fdba3e9ac52a97852cd60564e6ea04c29a2223a0172f8"
+    },
+    "roll/utils/functionals.py": {
+      "before": "a5613f5ba6161d95fa4004cac1dbd04deb469a71e784bf22bafeab7a4cd551db",
+      "after": "e3d0a65f55101ec9135f5d381494129d2d59da0b408075c8150ab3c4c2a6ce42"
+    }
+  },
+  "patch_sha256": "bf3c9cfb350c5fc40f44258cd2a92dc167759a2b4a695456b8579cfa757e17bd"
+}
